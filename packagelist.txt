@@ -22,5 +22,8 @@ firefox
 vscode
 nvim
 nano
-
+tumbler 
+ffmpegthumbnailer 
+poppler-glib 
+libgsf 
 Pictures -> Background and Screenshots 
