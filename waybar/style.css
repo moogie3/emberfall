@@ -1,0 +1,230 @@
+* {
+    font-family: "FOT-Rodin Pro DB";
+    font-size: 14px;
+    font-weight: normal;
+    border: none;
+}
+
+window#waybar {
+    background-color: rgba(17, 17, 17, 0.75); 
+    color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Individual Module Padding */
+#workspaces, #clock, #custom-notification, #pulseaudio, #bluetooth, #network, #battery, #custom-power {
+    padding: 6px 12px;
+}
+
+/* Workspaces */
+#workspaces button {
+    color: #ffffff;
+    padding: 0 13px;
+    margin: 0 3px;
+    border-radius: 7px;
+    background-color: transparent;
+}
+#workspaces button.active {
+    color: #03ad7a;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 22px;
+    border-radius: 20px;
+}
+/* Terminal workspace icon stays visually distinct */
+#workspaces button:nth-child(1) {
+    font-size: 16px;
+}
+
+/* Battery Logic Colors */
+#battery {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#battery.charging {
+    color: #a0d0c0; /* Greenish glow when charging */
+}
+
+#battery.warning:not(.charging) {
+    color: #d0e0c0; /* Yellowish for warning */
+}
+
+#battery.critical:not(.charging) {
+    color: #ff6c6b; /* Red for critical battery */
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color:  rgba(255, 108, 107, 0.2);
+    }
+}
+
+/* Functional Icon Colors */
+#clock, #custom-notification, #pulseaudio, #bluetooth, #network, #custom-power {
+    color: #ffffff;
+}
+
+#custom-power:hover {
+    color: #ff6c6b; /* Red hover for power */
+}
+
+/* Hover effects for feedback */
+#workspaces button:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#clock:hover, #custom-notification:hover, #pulseaudio:hover, #bluetooth:hover, #network:hover, #battery:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+#pulseaudio {
+    font-size: 16px;
+}
+
+/* Network States */
+#network {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 12;
+}
+
+#network.disconnected {
+    color: #ffa000; /* Amber: No connection */
+}
+
+#network.disabled {
+    color: #ff6c6b; /* Red: WiFi Radio is OFF */
+}
+
+/* Launcher (Wofi Button) */
+#custom-launcher {
+    font-size: 18px;
+    color: #ffffff;
+    padding: 0 25px; /* Adjusted to match module spacing */
+    transition: all 0.3s ease;
+}
+
+#custom-launcher:hover {
+    color: #ffffff; /* Keeping it white to match others, or use #03ad7a for a pop of color */
+    background-color: rgba(255, 255, 255, 0.1); /* Matches workspace/clock hover */
+    border-radius: 15px;
+}
+
+#custom-power {
+    font-size: 22px;      /* Match right-side icon size */
+    color: #ffffff;
+    padding: 0px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#custom-power:hover {
+    color: #ff6c6b;
+}
+
+#custom-separator {
+    font-size: 23px;
+    color: #ffffff;
+}
+
+/* Clock */
+#clock {
+    color: #ffffff;
+    font-size:18px;
+    padding: 6px 20px;
+    transition: all 0.3s ease;
+}
+#clock:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+/* Calendar tooltip styling */
+tooltip {
+    background-color: rgba(17, 17, 17, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 8px;
+}
+tooltip label {
+    color: #ffffff;
+}
+
+/* Notification Bell */
+#custom-notification {
+    font-size: 14px;
+    color: #ffffff;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+}
+#custom-notification:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+/* Bell turns amber when DND is active */
+#custom-notification.dnd {
+    color: #ffa000;
+}
+
+/* VPN Custom Colors */
+#custom-vpn {
+    transition: all 0.3s ease;
+}
+
+#custom-vpn.connected {
+    color: #ffffff; /* White when ON */
+}
+
+#custom-vpn.connecting {
+    color: #ffa000; /* Yellow while connecting */
+}
+
+#custom-vpn.disconnected {
+    color: #ff6c6b; /* Red when OFF */
+}
+
+/* Ensure amber color shows up for all DND states */
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none,
+#custom-notification.inhibited-notification,
+#custom-notification.inhibited-none,
+#custom-notification.dnd-inhibited-notification,
+#custom-notification.dnd-inhibited-none {
+    color: #ffa000;
+}
+
+/* Muted state for PulseAudio */
+#pulseaudio.muted {
+    color: #ff6c6b; /* Red when muted to match battery critical/wifi disabled */
+}
+
+/* Urgent Workspace - Full Glow Pulse */
+#workspaces button.urgent {
+    color: #fdf470; 
+    /* Matches the radius of your other module hovers */
+    border-radius: 4px; 
+    animation-name: urgent-glow;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes urgent-glow {
+    from {
+        color: #fdf470;
+        background-color: rgba(253, 244, 112, 0.05);
+    }
+    to {
+        color: rgba(253, 244, 112, 0.6);
+        background-color: rgba(253, 244, 112, 0.3);
+    }
+}

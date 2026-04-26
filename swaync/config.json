@@ -1,0 +1,67 @@
+{
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "control-center-layer": "top",
+    "layer-shell": true,
+    "cssPriority": "user",
+    "control-center-width": 360,
+    "control-center-margin-top": 25,
+    "control-center-margin-bottom": 25,
+    "control-center-margin-right": 25,
+    "control-center-margin-left": 12,
+    "notification-window-width": 360,
+    "notification-icon-size": 36,
+    "notification-body-image-height": 80,
+    "notification-body-image-width": 80,
+    "widgets": [
+        "title",
+        "mpris",
+        "notifications",
+        "volume",
+        "backlight",
+        "buttons-grid"
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Notification Center",
+            "clear-all-button": true,
+            "button-text": "󰆴"
+        },
+        "mpris": {
+            "image-size": 50,
+            "image-radius": 8
+        },
+        "volume": { "label": "󰕾 " },
+        "backlight": { "label": "󰃟 " },
+        "buttons-grid": {
+            "actions": [
+                { 
+                    "label": "", 
+                    "command": "sh -c 'hyprmod &' && notify-send 'System' 'Opening Hyprmod'" 
+                },
+                { 
+                    "label": "󰝟", 
+                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send 'Audio' 'Toggle Mute'", 
+                    "type": "toggle" 
+                },
+                { 
+                    "label": "󰤄", 
+                    "command": "swaync-client -d -swb && notify-send 'System' 'Do Not Disturb Toggled'", 
+                    "type": "toggle"
+                },
+                { 
+                    "label": "", 
+                    "command": "blueman-manager && notify-send 'Bluetooth' 'Opening Manager'" 
+                }, 
+                { 
+                    "label": "󰖂", 
+                    "command": "~/.config/hypr/scripts/vpn-toggle.sh",
+                    "type": "toggle" 
+                },
+                { "label": "", "command": "kitty nmtui" }
+            ]
+        }
+    }
+}

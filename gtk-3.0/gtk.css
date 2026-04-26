@@ -1,0 +1,98 @@
+/* ── Frosted Gray GTK3 Variables ── */
+@define-color background_frosted rgba(36, 36, 36, 0.85);
+@define-color accent #03ad7a;
+@define-color theme_bg_color #242424;           /* Neutral dark gray */
+@define-color theme_fg_color #ffffff;           /* Clean white text */
+@define-color theme_base_color #1e1e1e;         /* Darker base for inputs/lists */
+@define-color theme_text_color #eeeeee;         /* Soft white for body text */
+@define-color theme_selected_bg_color #4a4a4a;  /* Muted gray selection */
+@define-color theme_selected_fg_color #ffffff;
+
+/* Thunar Specific Overrides */
+.thunar {
+    /* Set to semi-transparent so Hyprland can blur it */
+    background-color: rgba(36, 36, 36, 0.85) !important;
+    color: @theme_fg_color !important;
+}
+
+.thunar .sidebar {
+    background-color: rgba(30, 30, 30, 0.9) !important;
+    color: #cccccc !important;
+}
+
+.thunar .view {
+    background-color: transparent !important;
+}
+
+/* Toolbars and Menus */
+.thunar toolbar, .thunar menubar, toolbar, menubar {
+    background-color: rgba(45, 45, 45, 0.95) !important;
+    /* Subtle white border instead of green */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* General GTK3 Window Fix */
+window.background {
+    background-color: rgba(36, 36, 36, 0.85);
+    color: @theme_fg_color;
+}
+
+/* Button & Entry Polishing */
+button {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: @theme_fg_color;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    font-family: 'FOT-Rodin Pro DB', sans-serif;
+    font-size: 13px;
+    outline: none;
+    border: none;
+}
+
+#window {
+    margin: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: @background_frosted;
+}
+
+#outer-box {    
+    margin: 2px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+#input {
+    margin: 0px 0px 8px 0px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: @accent;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#inner-box {
+    margin: 0px;
+    padding: 2px;
+}
+
+#entry {
+    padding: 4px 8px;
+    margin: 1px 0px;
+    border-radius: 4px;
+}
+
+#entry:selected {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#entry:selected #text {
+    color: #ffffff;
+    font-weight: bold;
+}

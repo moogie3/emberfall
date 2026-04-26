@@ -1,0 +1,129 @@
+{
+    "layer": "top",
+    "position": "top",
+    "width": 1800,
+    "margin-top": 20,
+    "reload_style_on_change": true,
+
+    "modules-left": ["custom/launcher", "custom/separator", "hyprland/workspaces"],
+    "modules-center": ["clock", "custom/vpn"],
+    "modules-right": ["custom/notification", "custom/separator", "pulseaudio", "network", "battery", "custom/separator", "custom/power"],
+
+    "custom/launcher": {
+        "format": "✧",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "active-only": false,
+        "urgent-only": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": { "1": []},
+        "format-icons": {
+            "1": "<span size='medium'></span>",
+            "2": "<span size='small'>Ⅱ</span>",
+            "3": "<span size='small'>Ⅲ</span>",
+            "4": "<span size='small'>Ⅳ</span>",
+            "5": "<span size='small'>Ⅴ</span>",
+            "6": "<span size='small'>Ⅵ</span>",
+            "7": "<span size='small'>Ⅶ</span>",
+            "8": "<span size='small'>Ⅷ</span>",
+            "9": "<span size='small'>Ⅸ</span>",
+            "default": "<span size='small'>※</span>"
+        }
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲", 
+        "format-connected": "󰂱",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/vpn": {
+        "format": "{text}",
+        "exec": "cat /tmp/waybar-vpn.json 2>/dev/null || echo '{\"text\":\"󰖂\",\"class\":\"unknown\"}'",
+        "return-type": "json",
+        "interval": 60,
+        "on-click": "bash /home/emberfall/.config/hypr/scripts/vpn-toggle.sh",
+        "signal": 8
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}",           // Removed {volume}%
+        "format-muted": "󰝟",          // Removed the word "Muted"
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰂰",
+            "headset": "󰂰",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "{volume}%", // Keeps the % visible only when you hover
+        "ignored-sinks": ["Easy Effects Sink", "Virtual Sink"]
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "format-disabled": "󰖪",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname} 󰈀",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nmcli radio wifi | grep -q 'enabled' && (nmcli radio wifi off && notify-send -a 'System' -i 'network-wireless-off' 'WiFi Disabled') || (nmcli radio wifi on && notify-send -a 'System' -i 'network-wireless' 'WiFi Enabled')",
+        "on-click-right": "kitty nmtui"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 20 },
+        "format": "{icon}",
+        "format-charging": "󱐋 {icon}",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+        "tooltip-format": "{capacity}%\n{timeTo}"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "custom/separator": {
+        "format": "│",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}",
+        "on-click": "gsimplecal"
+    },
+
+    "custom/notification": {
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰂚",
+            "none": "󰂚",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󰂚",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "on-click": "swaync-client -t -sw",
+        "exec-on-event": true,
+        "tooltip": false
+    },
+}

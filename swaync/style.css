@@ -1,0 +1,205 @@
+/* ── Theme: Frosted Gray / Neutral Glass ─────────────────── */
+@define-color bg_color       #1e1e1e;
+@define-color bg_popup       #252525;   /* More opaque base for floating */
+@define-color fg_color       #f0f0f0;
+@define-color fg_muted       rgba(255,255,255,0.50);
+@define-color accent_color   #3a3a3a;
+@define-color highlight      #ffffff;
+@define-color critical       #ff6c6b;
+@define-color hover_bg       #2e2e2e;
+
+* {
+    font-family: 'FOT-Rodin Pro DB', monospace;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* ── Control Center Shell ──────────────────────────────────── */
+.control-center {
+    background: alpha(@bg_color, 0.92);
+    color: @fg_color;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    padding: 10px 8px;
+}
+
+/* ── Title Bar ───────────────────────────────────── */
+.widget-title {
+    padding: 4px 8px 10px 8px;
+    margin-bottom: 6px;
+}
+
+.widget-title > label {
+    font-size: 15px;
+    font-weight: bold;
+    color: @highlight;
+    letter-spacing: 0.3px;
+}
+
+.widget-title > button {
+    font-size: 12px;
+    padding: 2px 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 6px;
+    color: @fg_muted;
+}
+
+.widget-title > button:hover {
+    background: rgba(255,255,255,0.12);
+    color: @fg_color;
+}
+
+/* ── Floating Notification Window (over apps) ──────────────── */
+/* This is the popup that appears when an app is open */
+.notification-window {
+    background: alpha(@bg_popup, 0.97);  /* Near-solid — no more see-through */
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.55);
+    padding: 2px;
+}
+
+/* ── Notification Row / Group (no bleed) ───────────────────── */
+.notification-row,
+.notification-row:focus,
+.notification-row:hover,
+.notification-group,
+.notification-group-container {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* ── Group Header (the app name + icon row) ─────────────────── */
+.notification-group-icon {
+    min-width: 16px;
+    min-height: 16px;
+    -gtk-icon-size: 16px;   /* Smaller system/app icon */
+}
+
+.notification-group > box > label {   /* "System" app name label */
+    font-size: 12px;
+    color: @fg_muted;
+}
+
+/* ── Individual Notification Card ──────────────────────────── */
+/* Inside the control center — slightly more opaque than before */
+.notification {
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    margin: 2px 4px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255,255,255,0.09);
+}
+
+.notification:hover {
+    background: @hover_bg;
+    border-color: rgba(255,255,255,0.16);
+}
+
+/* ── Notification Typography ───────────────────────────────── */
+.notification-content .summary {
+    font-size: 13px;
+    font-weight: bold;
+    color: @highlight;
+}
+
+.notification-content .body {
+    font-size: 12px;
+    color: @fg_muted;
+    margin-top: 1px;
+}
+
+/* Timestamp ("Now") */
+.notification-content .time {
+    font-size: 11px;
+    color: rgba(255,255,255,0.30);
+}
+
+.notification-action {
+    font-size: 11px;
+    margin: 2px;
+    padding: 2px 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    color: @fg_muted;
+}
+
+/* ── Volume / Backlight Sliders ────────────────────────────── */
+.widget-volume > box > label,
+.widget-backlight > box > label {
+    font-size: 16px;
+    min-width: 20px;
+    color: @fg_color;
+}
+
+/* Bigger, more tactile thumb */
+scale slider {
+    margin: -7px;
+    min-width: 10px;
+    min-height: 10px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+}
+
+scale slider:hover {
+    background: @highlight;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.18);
+}
+
+scale trough {
+    border-radius: 10px;
+    background: rgba(255,255,255,0.10);
+    min-height: 3px;
+}
+
+scale trough highlight {
+    background: rgba(255,255,255,0.65);
+    border-radius: 10px;
+}
+
+/* ── Buttons Grid ──────────────────────────────────────────── */
+.widget-buttons-grid > flowbox {
+    padding: 4px 6px;
+    border-spacing: 4px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild {
+    margin: 2px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 6px;
+    color: @fg_color;
+    margin: 0;
+    padding: 5px;
+    min-height: 22px;
+    min-width: 22px;
+    font-size: 14px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: rgba(255,255,255,0.13);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.active {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.22);
+    color: @highlight;
+}
+
+/* ── MPRIS ─────────────────────────────────────────────────── */
+.widget-mpris .widget-mpris-player {
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 6px;
+    margin: 4px;
+    border: 1px solid rgba(255,255,255,0.07);
+}

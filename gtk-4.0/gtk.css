@@ -1,0 +1,90 @@
+/* ── MATERIA DARK–INSPIRED PALETTE ── */
+@define-color accent_color #80cbc4;
+@define-color accent_bg_color #80cbc4;
+@define-color accent_fg_color #1e272c;
+
+@define-color window_bg_color #263238;
+@define-color window_fg_color #eceff1;
+
+@define-color view_bg_color #1e272c;
+@define-color view_fg_color #eceff1;
+
+@define-color headerbar_bg_color #263238;
+@define-color headerbar_fg_color #eceff1;
+@define-color headerbar_border_color rgba(128, 203, 196, 0.2);
+@define-color headerbar_backdrop_color @window_bg_color;
+
+@define-color card_bg_color rgba(38, 50, 56, 0.6);
+@define-color card_fg_color @window_fg_color;
+@define-color card_border_color rgba(128, 203, 196, 0.12);
+
+@define-color sidebar_bg_color #1e272c;
+@define-color sidebar_fg_color #b0bec5;
+@define-color sidebar_backdrop_color #1e272c;
+
+@define-color popover_bg_color #263238;
+@define-color popover_fg_color #eceff1;
+
+@define-color dialog_bg_color #263238;
+@define-color dialog_fg_color #eceff1;
+
+/* ── UI ELEMENT OVERRIDES ── */
+/* Kill the white sidebar in HyprMod/Libadwaita */
+navigationrail, .navigation-sidebar, stacksidebar, .sidebar {
+    background-color: @sidebar_bg_color !important;
+    color: @sidebar_fg_color !important;
+}
+
+/* Force the main window background */
+window, .background {
+    background-color: @window_bg_color !important;
+    color: @window_fg_color !important;
+}
+
+/* Fix the "boxed list" settings rows (The gaps/borders boxes) */
+.boxed-list, .card, row {
+    background-color: @card_bg_color !important;
+    color: @card_fg_color !important;
+    border-color: @card_border_color !important;
+}
+
+/* Fix selection colors */
+selection {
+    background-color: @accent_color;
+    color: @accent_fg_color;
+}
+
+/* ── GNOME TEXT EDITOR SPECIFIC OVERRIDES ── */
+textview, textview text {
+    background-color: @view_bg_color !important;
+    color: @view_fg_color !important;
+    selection-background-color: @accent_color !important;
+    selection-color: @accent_fg_color !important;
+}
+
+textview text {
+    font-family: "Monospace";
+    font-size: 13px;
+}
+
+headerbar button, headerbar .titlebutton {
+    background-color: transparent !important;
+    color: @headerbar_fg_color !important;
+}
+
+headerbar {
+    background-color: @headerbar_bg_color !important;
+    color: @headerbar_fg_color !important;
+    border-bottom-color: @headerbar_border_color !important;
+}
+
+/* Cursor color in the editor */
+textview text cursor {
+    background-color: @accent_color !important;
+}
+
+/* Popovers inside Text Editor (e.g., find/replace) */
+popover {
+    background-color: @popover_bg_color !important;
+    color: @popover_fg_color !important;
+}

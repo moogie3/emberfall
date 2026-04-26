@@ -1,0 +1,58 @@
+# ----------------------------
+# Font
+# ----------------------------
+# font_family      JetBrainsMono Nerd Font
+font_size        12.0
+# ----------------------------
+# Background + opacity
+# ----------------------------
+background       #1b2b2a   # soft bluish-green background
+foreground       #cce0c0   # soft off-white text
+
+# Transparency / blur interaction
+background_opacity 0.85
+
+# ----------------------------
+# Cursor
+# ----------------------------
+cursor           #888888
+cursor_shape     block
+selection_background #335555
+
+# Enable window borders
+window_border_width    1        
+window_border_active   #58a68a
+window_border_inactive #3f5a50
+
+# ----------------------------
+# ANSI colors (soft Monokai-inspired)
+# ----------------------------
+color0  #1b2b2a  # black background
+color1  #ff6c6b  # red
+color2  #a0d0c0  # green
+color3  #d0e0c0  # yellow
+color4  #70c0c0  # blue
+color5  #b0d0c0  # magenta
+color6  #60c0c0  # cyan
+color7  #cce0c0  # white / foreground
+color8  #556766  # bright black
+color9  #ff6c6b  # bright red
+color10 #a0d0c0  # bright green
+color11 #d0e0c0  # bright yellow
+color12 #70c0c0  # bright blue
+color13 #b0d0c0  # bright magenta
+color14 #60c0c0  # bright cyan
+color15 #cce0c0  # bright white
+
+# ----------------------------
+# Scrollback
+# ----------------------------
+scrollback_lines 10000
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Geist Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
