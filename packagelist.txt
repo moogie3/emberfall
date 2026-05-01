@@ -1,29 +1,53 @@
+PACMAN
 claws-mail
 fastfetch
 htop
 pavucontrol
 polkit
-wireguard
 protonvpncli
 motrix
-xdg folder home
+xdg-user-dir
 zsh
 powerlevel10k
 gthumb
-rar, zip, unzrip
+gvfs gvfs-afc gvfs-mtp
+slurp
+rar, zip, unzip
 gsimplecal
 yazi
-eza tree
+eza 
+tree
 swappy
 grim
 gnome text editor
-hypermod
 firefox
 vscode
 nvim
 nano
 tumbler 
-ffmpegthumbnailer 
+ffmpegthumbnailer
 poppler-glib 
-libgsf 
+libgsf
+hyprlock
+hyprpaper
+hyprland
+kitty
+thunar
+nwg-look
+waybar
+proton-vpn-cli
+sddm
+qt5-declarative
+blueman
+adw-gtk-theme
+bat
+vscode
+zsh-syntax-highlighting zsh-autosuggestions
+libpulse brightnessctl playerctl
+
+YAY
+hyprmod-git
+wireguard
+wlogout
+
 Pictures -> Background and Screenshots 
