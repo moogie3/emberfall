@@ -44,6 +44,7 @@ bat
 vscode
 zsh-syntax-highlighting zsh-autosuggestions
 libpulse brightnessctl playerctl
+github-cli -> gh auth login
 
 YAY
 hyprmod-git
