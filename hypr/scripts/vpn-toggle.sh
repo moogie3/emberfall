@@ -5,6 +5,10 @@ if ip link show "$IFACE" >/dev/null 2>&1; then
     # Disconnect VPN
     notify-send -a "System" "VPN" "Disconnecting VPN..."
     if sudo wg-quick down "$IFACE" >/dev/null 2>&1; then
+        # Use nmcli to refresh the current connection's DNS
+        # This forces the WiFi/Ethernet DNS back into resolv.conf
+        nmcli device reapply $(nmcli -t -f DEVICE connection show --active | head -n 1)
+        
         notify-send -a "System" "VPN" "VPN Disconnected"
         CLASS="disconnected"
     else

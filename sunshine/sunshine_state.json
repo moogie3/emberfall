@@ -1,0 +1,15 @@
+{
+    "username": "emberfall",
+    "salt": "TwD%zoCkLB!Tn6dr",
+    "password": "C472B5F3D1652BAA25875E9CA55C8798FAC64DBD9593AB5E1DB9421D51635472",
+    "root": {
+        "uniqueid": "4F9C095F-2DD0-C228-6C11-EF7733215A03",
+        "named_devices": [
+            {
+                "name": "Midnight TV",
+                "cert": "-----BEGIN CERTIFICATE-----\nMIICxjCCAa6gAwIBAgIIV\/ti0abNye8wDQYJKoZIhvcNAQELBQAwIzEhMB8GA1UE\nAwwYTlZJRElBIEdhbWVTdHJlYW0gQ2xpZW50MB4XDTI2MDQyNjE2MDkyMFoXDTQ2\nMDQyNjE2MDkyMFowIzEhMB8GA1UEAwwYTlZJRElBIEdhbWVTdHJlYW0gQ2xpZW50\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2Goq3TbhljMnfka8dUbE\n9jUbjh6LbB\/9zKZSpFEXpDjEShPcIN7Tl7R7J\/EJgRfbVgt7UADsKDRJlWFhsNZK\n0kXIMCop9pLJ85pqkwfJnc7eTLltGle2mXsvdrcOYAorK+NzLauhy5nTQ0KPp4hS\nyE4J+RTFpz7paztY2V4anQ3TN19Qz\/WzXTq\/UIWUrr2psSQoKsQZeAJSvFlWdRiT\n6u4FHzXb7GV4n8au2lOCn3IiBMbvrmGkV0TNQFKWCUAohAjjOVKaD0BLkx\/tcywn\ny9\/97HP\/82gzXBGJpZreto5Ctc9rr1NBpIzheLXM9VexEPFmSME60sqavTUGPt45\nzwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQB5EuwqxqsQBJM2cjxwv+Db8HPAj38j\nK07Rm6YOTUHi7ebPnvw0aEASIZK0D5wb2NTCksA0ef+1ZwRuq4neccvS1w9fNZSG\n4TW5cUt6rlJqavdxvbt4YX+Z3S79vwc2NdFqwpFE6ibiXgMhOWWRNRxQQ53747GA\n3j3kJTIO+vauxPCCftuQw8ce6taUZ4pUTKOHHv+JxC+yIuk0ilph1cGhFuA4xYJt\nvpom7Z9HP0THpPyyT0yhjTqoLg0PLAbIoAkcz7RveA82drCkEe91kMe9HEorTMOd\nbVMf7uL8bt4QiMLqeqU\/p+4B3lmd+O\/kvlQaa7rw\/6ugWsYXC8Cp\/QK7\n-----END CERTIFICATE-----\n",
+                "uuid": "EAFC247F-D909-1E25-AA88-4E16E1B91E45"
+            }
+        ]
+    }
+}

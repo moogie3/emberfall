@@ -4,9 +4,10 @@ fastfetch
 htop
 pavucontrol
 polkit
-protonvpncli
-motrix
 xdg-user-dir
+xdg-utils
+perl-file-mimeinfo
+xdg-mime
 zsh
 powerlevel10k
 gthumb
@@ -45,10 +46,18 @@ vscode
 zsh-syntax-highlighting zsh-autosuggestions
 libpulse brightnessctl playerctl
 github-cli -> gh auth login
+systemd-resolvconf (for vpn Proton) -> sudo resolvconf -u
 
 YAY
 hyprmod-git
 wireguard
 wlogout
+onlyoffice-bin
+
+YAZI
+ya pkg add yazi-rs/plugins:git
+		yazi-rs/plugins:full-border
+		Reledia/glow
+		yazi-rs/plugins:chmod
 
 Pictures -> Background and Screenshots 
