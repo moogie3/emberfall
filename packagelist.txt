@@ -46,6 +46,7 @@ vscode
 zsh-syntax-highlighting zsh-autosuggestions
 libpulse brightnessctl playerctl
 github-cli -> gh auth login
+net-tools inetutils
 systemd-resolvconf (for vpn Proton) -> sudo resolvconf -u
 
 YAY

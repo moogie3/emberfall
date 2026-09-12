@@ -177,6 +177,7 @@ tooltip label {
 /* VPN Custom Colors */
 #custom-vpn {
     transition: all 0.3s ease;
+    color: #ff6c6b;
 }
 
 #custom-vpn.connected {
@@ -208,7 +209,7 @@ tooltip label {
 
 /* Urgent Workspace - Full Glow Pulse */
 #workspaces button.urgent {
-    color: #fdf470; 
+    color: #7096fd; 
     /* Matches the radius of your other module hovers */
     border-radius: 4px; 
     animation-name: urgent-glow;
