@@ -48,7 +48,7 @@
     },
 
     "custom/vpn": {
-        "format": "{text}",
+        "format": "{text} ",
         "exec": "cat /tmp/waybar-vpn.json 2>/dev/null || echo '{\"text\":\"󰖂\",\"class\":\"unknown\"}'",
         "return-type": "json",
         "interval": 60,

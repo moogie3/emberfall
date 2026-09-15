@@ -209,7 +209,7 @@ tooltip label {
 
 /* Urgent Workspace - Full Glow Pulse */
 #workspaces button.urgent {
-    color: #7096fd; 
+    color: #7098fd; 
     /* Matches the radius of your other module hovers */
     border-radius: 4px; 
     animation-name: urgent-glow;
@@ -221,11 +221,11 @@ tooltip label {
 
 @keyframes urgent-glow {
     from {
-        color: #fdf470;
-        background-color: rgba(253, 244, 112, 0.05);
+        color: #7098fd;
+        background-color: rgba(112, 253, 248, 0.05);
     }
     to {
-        color: rgba(253, 244, 112, 0.6);
-        background-color: rgba(253, 244, 112, 0.3);
+        color: rgba(112, 225, 253, 0.6);
+        background-color: rgba(112, 194, 253, 0.3);
     }
 }
